@@ -1,0 +1,7 @@
+browser sensible-browser
+
+# r download selected
+# R download all
+auto-reload yes
+
+external-url-viewer "urlview"

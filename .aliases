@@ -21,13 +21,3 @@ alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 
 alias qtox='flatpak run io.github.qtox.qTox'
 alias obs='flatpak run com.obsproject.Studio'
-
-#PS1="giorgir@IdeaPad-3:~$ "
-#exec "setxkbmap -layout us,ge"
-#exec "setxkbmap -option 'grp:alt_shift_toggle'"
-
-# export SHELL=zsh
-# sudo chsh -s $(which zsh)
-tmux
-
-clear

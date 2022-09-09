@@ -13,11 +13,12 @@ alias sr='sudo ranger'
 alias v='vim'
 alias nv='nvim'
 alias vf='vifm .'
-alias PS='PS1="> "'
 alias spam='cd ~/.local/share/nvim/swap'
 alias folder='nautilus'
 alias light='xrandr --output eDP-1 --brightness'  # control brightness 0 - 1
 alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
+
+alias PS='PS1="> "'
 
 alias qtox='flatpak run io.github.qtox.qTox'
 alias obs='flatpak run com.obsproject.Studio'

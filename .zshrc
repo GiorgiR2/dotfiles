@@ -7,6 +7,11 @@
 
 # export SHELL=zsh
 # sudo chsh -s $(which zsh)
+
+export EDITOR=nvim
+export VISUAL=nvim
+export TERM=xterm-256color
+
 tmux
 
 clear

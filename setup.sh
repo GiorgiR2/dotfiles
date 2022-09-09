@@ -3,6 +3,20 @@
 # Future plans:
 # -- automate with bash
 
+while true; do
+
+read -p "Do you want to install packages? (y/n) " yn
+
+case $yn in 
+	[yY] ) source ~/.dotfiles/packages.sh;
+		break;;
+	[nN] ) echo exiting...;
+		exit;;
+	* ) echo invalid response;;
+esac
+
+done
+
 ########################
 #  delete these files  #
 ########################

@@ -1,5 +1,5 @@
 
-sudo apt install i3 git ranger zsh neofetch neovim curl tmux kitty compton -y
+sudo apt install i3 git ranger zsh neofetch neovim curl tmux kitty compton youtube-dl -y
 
 # need to PlugInstall
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

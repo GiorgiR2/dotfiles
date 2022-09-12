@@ -1,27 +1,26 @@
 #!/usr/bin/bash
 
-# Future plans:
-# -- automate with bash
+# . ~/.dotfiles/packages.sh
 
-while true; do
+# while false; do
 
-read -p "Do you want to install packages? (y/n) " yn
+# read -p "Do you want to install packages? (y/n) " yn
 
-case $yn in 
-	[yY] ) source ~/.dotfiles/packages.sh;
-		break;;
-	[nN] ) echo exiting...;
-		exit;;
-	* ) echo invalid response;;
-esac
+# case $yn in 
+# 	[yY] ) source ~/.dotfiles/packages.sh;
+# 		break;;
+# 	[nN] ) echo exiting...;
+# 		exit;;
+# 	* ) echo invalid response;;
+# esac
 
-done
+# done
 
-########################
-#  delete these files  #
-########################
+dotFiles=('.aliases' '.fehbg' '.profile' '.selected_editor' '.tmux.conf' '.zshrc' '.newsboat' '/.config/compton' '/.config/i3' '/.config/kitty' '/.config/nvim' '/.config/ranger')
 
-dotFile = ()
+#####################################
+#  delete already existing configs  #
+#####################################
 
 # home directory
 rm -rf ~/.aliases
@@ -34,10 +33,7 @@ rm -rf ~/.zshrc
 rm -rf ~/.newsboat
 
 # /etc
-# rm -rf /etc/i3
 # rm -rf /etc/newsboat
-# rm -rf /etc/ranger
-# rm -rf /etc/vim
 # rm -rf /etc/i3status.conf
 
 # ~/.config
@@ -60,10 +56,7 @@ ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 
 ln -sf ~/.dotfiles/.newsboat ~/.newsboat
 
-# ln -sf ~/.dotfiles/etc/i3 /etc/i3
 # ln -sf ~/.dotfiles/etc/newsboat /etc/newsboat
-# ln -sf ~/.dotfiles/etc/ranger /etc/ranger
-# ln -sf ~/.dotfiles/etc/vim /etc/vim
 # ln -sf ~/.dotfiles/etc/i3status.conf /etc/i3status.conf
 
 ln -sf ~/.dotfiles/.config/compton ~/.config/compton
@@ -72,3 +65,4 @@ ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
 ln -sf ~/.dotfiles/.config/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/.config/ranger ~/.config/ranger
 
+clear;

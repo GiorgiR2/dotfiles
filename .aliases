@@ -15,7 +15,8 @@ alias nv='nvim'
 alias vf='vifm .'
 alias spam='cd ~/.local/share/nvim/swap'
 alias folder='nautilus'
-alias light='xrandr --output eDP-1 --brightness'  # control brightness 0 - 1
+
+alias light='xrandr --output eDP-1 --brightness'  # control brightness 0.0 - 1.0
 alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 
 alias PS='PS1="> "'

@@ -23,3 +23,7 @@ alias PS='PS1="> "'
 
 alias qtox='flatpak run io.github.qtox.qTox'
 alias obs='flatpak run com.obsproject.Studio'
+alias telegram='~/Downloads/Telegram/Telegram'
+
+alias server='python -m http.server'
+

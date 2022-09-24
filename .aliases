@@ -13,17 +13,24 @@ alias sr='sudo ranger'
 alias v='vim'
 alias nv='nvim'
 alias vf='vifm .'
-alias spam='cd ~/.local/share/nvim/swap'
+alias swap='cd ~/.local/share/nvim/swap'
 alias folder='nautilus'
 
-alias light='xrandr --output eDP-1 --brightness'  # control brightness 0.0 - 1.0
+alias yt='youtube-dl'
+alias yta='youtube-dl -x --audio-format mp3' # Downloads audio
+alias ytf='youtube-dl -F' # Print resolutions' data
+alias ytd='youtube-dl -f' # Download specific resolition; example: ytd 22
+alias ytap='youtube-dl --extract-audio --audio-format mp3 -o' # Download full playlist in mp3
+
+alias light='xrandr --output eDP-1 --brightness' # control brightness 0.0 - 1.0
 alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 
 alias PS='PS1="> "'
 
-alias qtox='flatpak run io.github.qtox.qTox'
-alias obs='flatpak run com.obsproject.Studio'
-alias telegram='~/Downloads/Telegram/Telegram'
+alias qtox='flatpak run io.github.qtox.qTox &'
+alias obs='flatpak run com.obsproject.Studio &'
+alias telegram='~/Downloads/Telegram/Telegram &'
+alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 
 alias server='python -m http.server'
 

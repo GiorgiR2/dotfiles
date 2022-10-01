@@ -4,6 +4,7 @@ sudo apt update
 # to change wallpaper
 sudo apt install feh
 
+sudo apt install newsboat
 sudo apt install grep ripgrep fd -y
 sudo apt install i3 i3status dmenu compton -y
 sudo apt install git zsh neofetch neovim curl tmux kitty youtube-dl -y

@@ -1,6 +1,6 @@
 # Dotfiles
 
-My Personal dotfiles, configurations, etc
+My Personal dotfiles, configurations...
 
 Software I currently use:
  - Web browser - brave
@@ -20,6 +20,6 @@ git clone https://github.com/GiorgiR2/dotfiles.git
 mv dotfiles/ .dotfiles
 cd dotfiles
 
-source setup.sh
-source packages.sh
+source ./setup.sh
+source ./packages.sh
 ```

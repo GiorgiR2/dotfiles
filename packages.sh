@@ -1,9 +1,13 @@
 
 sudo apt update
 
+# to change wallpaper
+sudo apt install feh
+
+sudo apt install grep ripgrep fd -y
 sudo apt install i3 i3status dmenu compton -y
 sudo apt install git zsh neofetch neovim curl tmux kitty youtube-dl -y
-sudo apt install ranger urlscan -y
+sudo apt install ranger w3m urlscan -y
 
 sudo apt install apt-transport-https -y
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
@@ -15,6 +19,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # nvim && :PlugInstall
 # + install node; npm
+
+# I do not use emacs
+# cd ~/.emacs.d
+# git clone --depth 1 https://github.com/doomemacs/doomemacs.git
+
+# change default terminal
+sudo update-alternatives --config x-terminal-emulator
+# select kitty
 
 # set zsh as default shell
 chsh

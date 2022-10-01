@@ -1,5 +1,7 @@
 
-. ~/.aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
 #PS1="giorgir@IdeaPad-3:~$ "
 #exec "setxkbmap -layout us,ge"

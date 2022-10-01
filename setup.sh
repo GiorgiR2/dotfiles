@@ -32,10 +32,6 @@ rm -rf ~/.zshrc
 
 rm -rf ~/.newsboat
 
-# /etc
-# rm -rf /etc/newsboat
-# rm -rf /etc/i3status.conf
-
 # ~/.config
 rm -rf ~/.config/compton
 rm -rf ~/.config/i3
@@ -55,9 +51,6 @@ ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 
 ln -sf ~/.dotfiles/.newsboat ~/.newsboat
-
-# ln -sf ~/.dotfiles/etc/newsboat /etc/newsboat
-# ln -sf ~/.dotfiles/etc/i3status.conf /etc/i3status.conf
 
 ln -sf ~/.dotfiles/.config/compton ~/.config/compton
 ln -sf ~/.dotfiles/.config/i3 ~/.config/i3

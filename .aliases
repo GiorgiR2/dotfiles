@@ -4,29 +4,65 @@
 # set default-command
 # set -g default-command /usr/local/bin/zsh
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls='ls --color=tty'
+
 alias c='clear'
 alias e='exit'
 alias p='pwd'
-alias ls='ls --color=tty'
 alias r='. ranger'
 alias sr='sudo ranger'
-alias v='vim'
-alias nv='nvim'
 alias vf='vifm .'
 alias swap='cd ~/.local/share/nvim/swap'
-alias folder='nautilus'
+alias folder='nautilus &'
 
+# vim and emacs
+alias v='vim'
+alias nv='nvim'
+# alias emacs="emacsclient -c -a 'emacs'"
+
+# youtube-dl download
 alias yt='youtube-dl'
 alias yta='youtube-dl -x --audio-format mp3' # Downloads audio
 alias ytf='youtube-dl -F' # Print resolutions' data
 alias ytd='youtube-dl -f' # Download specific resolition; example: ytd 22
 alias ytap='youtube-dl --extract-audio --audio-format mp3 -o' # Download full playlist in mp3
 
-alias light='xrandr --output eDP-1 --brightness' # control brightness 0.0 - 1.0
+# alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+# alias yta-best="yt-dlp --extract-audio --audio-format best "
+# alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+# alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+# alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+# alias yta-opus="yt-dlp --extract-audio --audio-format opus "
+# alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
+# alias yta-wav="yt-dlp --extract-audio --audio-format wav "
+# alias ytv-best="yt-dlp -f bestvideo+bestaudio "
+
+# control brightness 0.0 - 1.0
+alias light='xrandr --output eDP-1 --brightness'
+
+# clean unnecessary stuff
 alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
+alias up='sudo apt update && sudo apt upgrade'
 
 alias PS='PS1="> "'
 
+# apps
 alias qtox='flatpak run io.github.qtox.qTox &'
 alias obs='flatpak run com.obsproject.Studio &'
 alias telegram='~/Downloads/Telegram/Telegram &'

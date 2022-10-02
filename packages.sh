@@ -10,6 +10,10 @@ sudo apt install i3 i3status dmenu compton -y
 sudo apt install git zsh neofetch neovim curl tmux kitty youtube-dl -y
 sudo apt install ranger w3m urlscan -y
 
+# install latex and it's dependencies
+sudo apt install texlive texinfo texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra -y
+# compile by: pdflatex name.tex or latex name.tex
+
 sudo apt install apt-transport-https -y
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg arch=amd64] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list

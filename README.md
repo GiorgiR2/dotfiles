@@ -18,7 +18,7 @@ Running following commands will make symlinks for config files, install packages
 ```sh
 git clone https://github.com/GiorgiR2/dotfiles.git
 mv dotfiles/ .dotfiles
-cd dotfiles
+cd .dotfiles
 
 source ./setup.sh
 source ./packages.sh

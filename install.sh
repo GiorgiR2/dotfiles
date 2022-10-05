@@ -64,6 +64,10 @@ installNodeNpm(){
 	echo no node
 }
 
+setupDotFiles(){
+	./setup.sh
+}
+
 main(){
 	sudo apt update
 
@@ -74,6 +78,8 @@ main(){
 	desktopApps
 	
 	latexDep
+
+	setupDotFiles
 }
 
 echo "We are about to setup your laptop\n"

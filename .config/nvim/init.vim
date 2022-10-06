@@ -17,9 +17,8 @@
 
 :set ignorecase " ignore cases (searching, etc)
 
-call plug#begin()
-
 " PlugInstall
+call plug#begin()
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw) ysiw
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
@@ -35,6 +34,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/neoclide/coc.nvim.git'
 Plug 'https://github.com/neoclide/vim-jsx-improve.git' " Plug 'chemzqm/vim-jsx-improve'
 Plug 'https://github.com/tomasiser/vim-code-dark.git' " Plug 'tomasiser/vim-code-dark'
+" Plug 'https://github.com/altercation/vim-colors-solarized.git'
 
 " Typescript support
 Plug 'https://github.com/leafgarland/typescript-vim.git' " Plug 'leafgarland/typescript-vim'
@@ -67,6 +67,11 @@ set background=dark
 " colorscheme iceberg
 " colorscheme jellybeans
 colorscheme codedark
+" colorscheme solarized
+
+" Highlight current line and 80 characters limit
+set cursorline
+" set colorcolumn=80
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"

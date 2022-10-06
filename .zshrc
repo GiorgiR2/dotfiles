@@ -17,3 +17,5 @@ export TERM=xterm-256color
 tmux
 
 clear
+
+pfetch

@@ -20,6 +20,5 @@ git clone https://github.com/GiorgiR2/dotfiles.git
 mv dotfiles/ .dotfiles
 cd .dotfiles
 
-bash ./setup.sh
-bash ./packages.sh
+bash ./install.sh
 ```

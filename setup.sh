@@ -13,13 +13,14 @@ main(){
 		#  make symlinks
 		ln -sf ~/.dotfiles/${item} ~/${item}
     done
+	echo Done!
 }
 
 echo -n  "Setup dotfiles? [Y/n] "
 read yn
 case $yn in
-	y | Y | Yes | yes) main;;
-      n | N | No | no) echo "You say No";;
+	y | Y | Yes | YES | yes) main;;
+      n | N | No | NO | no) echo "You say No";;
       *) echo "Invalid input..." break;;
 esac
 

@@ -16,13 +16,12 @@ Software I currently use:
 Running following commands will make symlinks for config files, install packages, change wallpaper, etc.
 
 ```sh
-git clone https://github.com/GiorgiR2/dotfiles.git
-mv dotfiles/ .dotfiles
+git clone https://github.com/GiorgiR2/dotfiles.git .dotfiles
 cd .dotfiles
 
 # install all packages/apps
 bash ./install.sh
 
-# add dotfiles
+# add dotfiles (symlinks)
 bash ./setup.sh
 ```

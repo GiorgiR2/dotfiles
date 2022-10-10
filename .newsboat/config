@@ -1,3 +1,10 @@
+#  _   _                         ____                 __       ____   _____   _____
+# | \ | |  ___ __        __ ___ | __ \  ___    ___ _ |  |_    |  _ \ / ____| / ____|
+# |  \| | / _ \\ \  /\  / // __||  _ / / _ \  /  _, ||   _|   | |_) |\___  \ \___  \
+# | |\  ||  __/ \ \/  \/ / \__ \| (_)\| (_) ||  (_| ||  |_    |  _  /____)  )____)  )
+# |_| \_| \___|  \__/\__/  |___/|____/ \___/  \___,_| \___|   |_| \_\\_____/ \_____/
+#
+
 #show-read-feeds no
 #auto-reload yes
 #browser sensible-browser
@@ -56,9 +63,16 @@ highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
 
+# Podboat items
+download-path "~/Downloads/%h/%n"
+max-downloads 3
+player "mpd"
 
 # "~new name for"        # change name of a rss feed
 # t to see tags
 # r download selected
 # R download all
 # newsboat -x reload
+#
+# D download queued podcast in podboat
+# p to play ?

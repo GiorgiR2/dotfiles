@@ -55,7 +55,7 @@ tilingWindowManager(){
 }
 
 desktopApps(){
-	echo "Installing desktop apps..."
+	echo "Installing desktop apps (brave browser)..."
 
 	apt install apt-transport-https -y
 	curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
@@ -80,13 +80,13 @@ setupDotFiles(){
 }
 
 main(){
-	
-	read distro
-	case $distro in
-		debian ) echo --debian--;;
-		void ) echo --void--;;
-		* ) echo not supported;;
-	esac
+	# echo "Choose distribution (debian): "
+	# read distro
+	# case $distro in
+	# 	debian ) echo --debian--;;
+	# 	void ) echo --void--;;
+	# 	* ) echo not supported;;
+	# esac
 
 	sudo apt update
 

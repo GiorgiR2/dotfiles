@@ -70,3 +70,7 @@ alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 
 alias server='python -m http.server'
 
+compile(){
+	g++ "$1.cpp" -o "$1"; "./$1"
+}
+

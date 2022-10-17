@@ -35,6 +35,8 @@ alias folder='nautilus &'
 alias v='vim'
 alias nv='nvim'
 # alias emacs="emacsclient -c -a 'emacs'"
+alias em="emacs &"
+alias emc="emacs -nw &"
 
 # youtube-dl download
 alias yt='youtube-dl'

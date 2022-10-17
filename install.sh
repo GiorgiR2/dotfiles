@@ -64,10 +64,9 @@ desktopApps(){
 }
 
 emacsSetup(){
-	# I do not use emacs
 	# cd ~/.emacs.d
 	# git clone --depth 1 https://github.com/doomemacs/doomemacs.git
-	echo no emacs
+	apt install emacs
 }
 
 installNodeNpm(){

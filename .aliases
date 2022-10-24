@@ -29,7 +29,7 @@ alias r='. ranger'
 alias sr='sudo ranger'
 alias vf='vifm .'
 alias swap='cd ~/.local/share/nvim/swap'
-alias folder='nautilus &'
+alias thunar='thunar . &'
 
 # vim and emacs
 alias v='vim'
@@ -44,6 +44,14 @@ alias yta='youtube-dl -x --audio-format mp3' # Downloads audio
 alias ytf='youtube-dl -F' # Print resolutions' data
 alias ytd='youtube-dl -f' # Download specific resolition; example: ytd 22
 alias ytap='youtube-dl --extract-audio --audio-format mp3 -o' # Download full playlist in mp3
+yth(){
+	echo "Options:"
+	echo "  yt   link        # download"
+	echo "  yta  link        # download audio"
+	echo "  ytf  link        # print resolutions' data"
+	echo "  ytd  link        # download specific resolition; example: ytd 22"
+	echo "  ytap link        # download full playlist in mp3"
+}
 
 # alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 # alias yta-best="yt-dlp --extract-audio --audio-format best "
@@ -73,8 +81,12 @@ alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 alias server='python -m http.server'
 
 alias uni="nv ~/20-03.txt"
+alias exams="nv ~/exams.txt"
 
-compile(){
+compilep(){
 	g++ "$1.cpp" -o "$1"; "./$1"
 }
 
+compilec(){
+	g++ "$1.cc" -o "$1"; "./$1"
+}

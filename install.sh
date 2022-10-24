@@ -94,9 +94,22 @@ main(){
 	changeDefaults
 	installTextEditors
 	tilingWindowManager
-	desktopApps
-	
-	latexDep
+
+	echo -n "Do you want to install Desktop apps (brave browser)? "
+	read yn0
+	case $yn0 in
+		y | Y | yes | Yes ) desktopApps;;
+		* ) echo "moving on...";;
+	esac
+
+	# ////
+
+	echo -n "Do you want to install latex? "
+	read yn1
+	case $yn1 in
+		y | Y | yes | Yes ) latexDep;;
+		* ) echo "moving on...";;
+	esac
 
 	setupDotFiles
 	# + install node; npm
@@ -104,7 +117,7 @@ main(){
 	echo Done!
 }
 
-echo "We are about to setup your laptop\n"
+echo "We are about to setup your laptop"
 echo -n "Are you sure? [Y/n] "
 read yn
 case $yn in 

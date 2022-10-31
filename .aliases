@@ -80,9 +80,11 @@ alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 
 alias server='python -m http.server'
 
+# files
 alias uni="nv ~/20-03.txt"
 alias exams="nv ~/exams.txt"
 
+# compilers
 compilep(){
 	g++ "$1.cpp" -o "$1"; "./$1"
 }
@@ -90,3 +92,18 @@ compilep(){
 compilec(){
 	g++ "$1.cc" -o "$1"; "./$1"
 }
+
+assembler(){
+	# x86
+	nasm -f elf32 "$1.asm" -o "./shitFiles/$1.o"
+	ld -m elf_i386 "./shitFiles/$1.o" -o "./shitFiles/$1"
+	"./shitFiles/$1"
+}
+
+# git
+alias gitlog="git log --graph --oneline --decorate"
+
+# connect to hdmi (projector)
+alias hdmion="xrandr --output HDMI-1 --mode 1920x1080 --rate 60"
+alias hdmioff="xrandr --output HDMI-1 --off --output HDMI-2 --auto"
+

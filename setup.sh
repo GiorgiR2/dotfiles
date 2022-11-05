@@ -2,7 +2,7 @@
 # . ~/.dotfiles/packages.sh
 
 main(){
-	dotFiles=('.aliases' '.fehbg' '.profile' '.selected_editor' '.tmux.conf' '.zshrc' '.newsboat' '.emacs' '.emacs.d/myinit.org' '.emacs.d/init.el' '.config/compton' '.config/i3' '.config/kitty' '.config/nvim' '.config/ranger')
+	dotFiles=('.aliases' '.fehbg' '.profile' '.selected_editor' '.tmux.conf' '.zshrc' '.newsboat' '.emacs' '.emacs.d/myinit.org' '.emacs.d/init.el' '.config/mpv' '.config/yt-dlp' '.config/compton' '.config/i3' '.config/kitty' '.config/nvim' '.config/ranger')
 	for item in "${dotFiles[@]}"; do
 		# echo rm -rf ~/${item}
 		# echo ln -sf ~/.dotfiles/${item} ~/${item}

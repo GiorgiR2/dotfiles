@@ -19,8 +19,10 @@ basicSetup(){
 	apt install htop newsboat -y
 	apt install grep ripgrep fd -y
 	apt install git zsh curl kitty -y
-	apt install youtube-dl yt-dlp -y
 	apt install ranger w3m urlscan -y
+
+	apt install youtube-dl yt-dlp -y
+	pip3 install brotli
 }
 
 function changeDefaults(){

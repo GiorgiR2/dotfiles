@@ -4,6 +4,8 @@
 # | |\  ||  __/ \ \/  \/ / \__ \| (_)\| (_) ||  (_| ||  |_    |  _  /____)  )____)  )
 # |_| \_| \___|  \__/\__/  |___/|____/ \___/  \___,_| \___|   |_| \_\\_____/ \_____/
 #
+#
+# https://drainerdomain.xyz/guides/consume-media-the-right-way-newsboat/
 
 #show-read-feeds no
 #auto-reload yes
@@ -45,7 +47,7 @@ color article white default bold
 browser linkhandler
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
-macro a set browser "tsp yt-dlp --embed-metadata -xic -f bestaudio/best --restrict-filenames" ; open-in-browser ; set browser linkhandler
+# macro a set browser "tsp yt-dlp --embed-metadata -xic -f bestaudio/best --restrict-filenames" ; open-in-browser ; set browser linkhandler
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro d set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
@@ -53,6 +55,33 @@ macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser 
 macro C set browser "youtube-viewer --comments=%u" ; open-in-browser ; set browser linkhandler
 macro p set browser "peertubetorrent %u 480" ; open-in-browser ; set browser linkhandler
 macro P set browser "peertubetorrent %u 1080" ; open-in-browser ; set browser linkhandler
+
+# Queue videos, clear playlist and reproduce playlist
+macro a set browser "echo %u >> ~/.config/newsboat/queue" ; open-in-browser ; set browser "brave-browser %u"
+macro c set browser "rm $HOME/.config/newsboat/queue > /dev/null 2>&1" ; open-in-browser ; set browser "brave-browser %u"
+macro p set browser "kill $(pidof mpv) ; setsid -f mpv --playlist=$HOME/.config/newsboat/queue > /dev/null 2>&1" ; open-in-browser ; set browser "brave-browser %u"
+# The idea of these 3 macros is creating, playing or deleting a playlist. If you take a look at the script in the previous section, this file named queue gets deleted when the script executes. For adding videos or even audios to said file you need to focus the article on a feed.
+
+# Play queued videos fullscreen second monitor
+macro P set browser "kill $(pidof mpv) ; setsid -f mpv --x11-name=newsboatfs --fullscreen=yes --playlist=$HOME/.config/newsboat/queue > /dev/null 2>&1" ; open-in-browser ; set browser "brave-browser %u"
+
+# Play video
+# macro v set browser "kill $(pidof mpv) ; setsid -f mpv %u > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "brave-browser %u"
+
+# Play video floating mode
+macro i set browser "kill $(pidof mpv) ; setsid -f mpv --x11-name=mpvfloat %u > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "brave-browser %u"
+
+# Play audio only
+macro A set browser "kill $(pidof mpv) ; setsid -f mpv %u --no-video > /dev/null 2>&1" ; open-in-browser-and-mark-read ; set browser "brave-browser %u"
+
+# Play fullscreen, i3 sends it to second monitor (useful for playing all the videos from a channel)
+macro f set browser "kill $(pidof mpv) ; setsid -f mpv --x11-name=newsboatfs --fullscreen=yes %u > /dev/null 2>&1" ; open-in-browser ; set browser "brave-browser %u"
+
+# Download video
+macro y set browser "yt-dlp %u" ; open-in-browser ; set browser "brave-browser %u"
+
+# open in brave browser
+macro o open-in-browser ; set browser brave-browser 
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
@@ -70,7 +99,7 @@ highlight article ":.*\\(embedded flash\\)$" magenta default
 # Podboat items
 download-path "~/Downloads/%h/%n"
 max-downloads 3
-player "mpv" # player "mpd"
+player "mpd" # player "mpd"
 
 # "~new name for"        # change name of a rss feed
 # t to see tags

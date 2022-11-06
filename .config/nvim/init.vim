@@ -1,7 +1,5 @@
-" From Luke Smiths's video - https://www.youtube.com/watch?v=d8XtNXutVto
 " xset r rate 300 50
 
-" https://www.youtube.com/watch?v=JWReY93Vl6g
 " install folder:
 " ~/.local/share/nvim/plugged
 :set encoding=UTF-8
@@ -15,7 +13,12 @@
 :set mouse=a
 :set clipboard+=unnamedplus
 
-:set ignorecase " ignore cases (searching, etc)
+set ignorecase " ignore cases (searching, etc)
+set showcmd
+set cmdheight=1
+set laststatus=2
+set scrolloff=10
+set expandtab
 
 " PlugInstall
 call plug#begin()
@@ -134,3 +137,7 @@ hi tsxAttrib guifg=#F8BD7F cterm=italic
 hi tsxTypeBraces guifg=#999999
 " dark-grey
 hi tsxTypes guifg=#666666
+
+" autocmd
+autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
+autocmd FileType js inoremap ;b <b></b><Space><++><Esc>FbT>i

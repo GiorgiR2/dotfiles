@@ -24,6 +24,7 @@ alias sr='sudo ranger'
 alias vf='vifm .'
 alias swap='cd ~/.local/share/nvim/swap'
 alias thunar='thunar . &'
+alias audio='alsamixer'
 
 alias s='source ~/.zshrc'
 

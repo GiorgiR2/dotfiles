@@ -25,6 +25,7 @@ alias vf='vifm .'
 alias swap='cd ~/.local/share/nvim/swap'
 alias thunar='thunar . &'
 alias audio='alsamixer'
+alias gpu='sudo intel_gpu_top'
 
 alias s='source ~/.zshrc'
 

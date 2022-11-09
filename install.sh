@@ -10,6 +10,10 @@ systemInfo(){
 	ls -l /usr/local/bin/pfetch
 
 	rm master.zip
+
+    # Get cpu data
+    # Start the top like utility with gpu (alias gpu='sudo intel_gpu_top')
+    apt install intel-gpu-tools
 }
 
 basicSetup(){

@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Install script for debian based distributions && void
+# Install script for void linux
 
 systemInfo(){
 	sudo xbps-install neofetch

@@ -13,6 +13,8 @@ main(){
 		#  make symlinks
 		ln -sf ~/.dotfiles/${item} ~/${item}
     done
+
+    source ~/.zshrc
 	echo Done!
 }
 

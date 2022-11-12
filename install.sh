@@ -6,7 +6,7 @@ systemInfo(){
 
 	wget https://github.com/dylanaraps/pfetch/archive/master.zip
 	unzip master.zip
-	install pfetch-master/pfetch /usr/local/bin/
+	sudo install pfetch-master/pfetch /usr/local/bin/
 	ls -l /usr/local/bin/pfetch
 
 	rm master.zip
@@ -29,7 +29,7 @@ basicSetup(){
 	pip3 install brotli
 }
 
-function changeDefaults(){
+changeDefaults(){
 	# change default terminal
 	# select kitty
 	update-alternatives --config x-terminal-emulator

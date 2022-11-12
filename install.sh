@@ -18,14 +18,14 @@ systemInfo(){
 
 basicSetup(){
 	# to change wallpaper
-	apt install feh -y
+	apt install feh
 
-	apt install htop newsboat -y
-	apt install grep ripgrep fd -y
-	apt install git zsh curl kitty -y
-	apt install ranger w3m urlscan -y
+	apt install htop newsboat
+	apt install grep ripgrep fd
+	apt install git zsh curl kitty
+	apt install ranger w3m urlscan
 
-	apt install youtube-dl yt-dlp -y
+	apt install youtube-dl yt-dlp
 	pip3 install brotli
 }
 
@@ -43,12 +43,12 @@ function changeDefaults(){
 
 latexDep(){
 	# install latex and it's dependencies
-	apt install texlive texinfo texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra -y
+	apt install texlive texinfo texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 	# compile by: pdflatex name.tex or latex name.tex
 }
 
 installTextEditors(){
-	apt install neovim tmux -y
+	apt install neovim tmux
 
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -58,16 +58,16 @@ installTextEditors(){
 }
 
 tilingWindowManager(){
-	apt install i3 i3status dmenu compton -y
+	apt install i3 i3status dmenu compton
 }
 
 desktopApps(){
 	echo "Installing desktop apps (brave browser)..."
 
-	apt install apt-transport-https -y
+	apt install apt-transport-https
 	curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg arch=amd64] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
-	sudo apt install brave-browser-beta -y
+	sudo apt install brave-browser-beta
 }
 
 emacsSetup(){

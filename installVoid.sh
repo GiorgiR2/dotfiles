@@ -14,14 +14,14 @@ systemInfo(){
 
 basicSetup(){
 	# to change wallpaper
-	sudo xbps-install feh -y
+	sudo xbps-install feh
 
-	sudo xbps-install htop newsboat -y
-	sudo xbps-install grep ripgrep fd -y
-	sudo xbps-install git zsh curl kitty -y
-	sudo xbps-install ranger w3m urlscan -y
+	sudo xbps-install htop newsboat
+	sudo xbps-install grep ripgrep fd
+	sudo xbps-install git zsh curl kitty
+	sudo xbps-install ranger w3m urlscan
 
-	sudo xbps-install youtube-dl yt-dlp -y
+	sudo xbps-install youtube-dl yt-dlp
 	pip3 install brotli
 }
 
@@ -39,12 +39,12 @@ function changeDefaults(){
 
 latexDep(){
 	# install latex and it's dependencies
-	sudo xbps-install texlive texinfo texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra -y
+	sudo xbps-install texlive texinfo texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 	# compile by: pdflatex name.tex or latex name.tex
 }
 
 installTextEditors(){
-	sudo xbps-install neovim tmux -y
+	sudo xbps-install neovim tmux
 
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 	# :PlugInstall
@@ -53,16 +53,16 @@ installTextEditors(){
 }
 
 tilingWindowManager(){
-	sudo xbps-install i3 i3status dmenu compton -y
+	sudo xbps-install i3 i3status dmenu compton
 }
 
 desktopApps(){
 	echo "Installing desktop apps (brave browser)..."
 
-	sudo xbps-install apt-transport-https -y
+	sudo xbps-install apt-transport-https
 	curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg arch=amd64] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
-	sudo xbps-install brave-browser-beta -y
+	sudo xbps-install brave-browser-beta
 }
 
 emacsSetup(){

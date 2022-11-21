@@ -22,12 +22,13 @@ alias p='pwd'
 alias r='. ranger'
 alias sr='sudo ranger'
 alias vf='vifm .'
-alias swap='cd ~/.local/share/nvim/swap'
 alias thunar='thunar . &'
 alias audio='alsamixer'
 alias gpu='sudo intel_gpu_top'
 
 alias s='source ~/.zshrc'
+
+alias swap='cd ~/.local/share/nvim/swap'
 
 # vim and emacs
 alias v='vim'
@@ -94,11 +95,19 @@ compilec(){
 	# g++ "$1.cc" -o "$1"; "./$1"
 }
 
+alias myg++='g++ -I$HOME/include -L$HOME/lib'
+
 # assembler
-assembler(){
+assembler32(){
 	# x86
 	nasm -f elf32 "$1.asm" -o "./shitFiles/$1.o"
 	ld -m elf_i386 "./shitFiles/$1.o" -o "./shitFiles/$1"
+	"./shitFiles/$1"
+}
+
+assembler64(){
+	nasm -f elf64 "$1.asm" -o "./shitFiles/$1.o"
+	ld "./shitFiles/$1.o" -o "./shitFiles/$1"
 	"./shitFiles/$1"
 }
 

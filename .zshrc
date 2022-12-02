@@ -1,4 +1,7 @@
 
+# include cpp custom made libraries
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Lib
+
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi

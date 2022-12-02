@@ -52,6 +52,29 @@ yth(){
 	echo "  ytap link        # download full playlist in mp3"
 }
 
+tarh(){
+    echo 'A quick guide to tar. spitemim.xyz/tar'
+    echo ''
+    echo 'by spitemim'
+    echo ''
+
+    echo '1. create an uncompressed .tar file from directory'
+    echo '   tar -cvf files.tar /path/to/directory'
+
+    echo '2. create a gzipped tarball from directory'
+    echo '   tar -cvzf files.tar.gz /path/to/directory'
+
+    echo '3. extract a gzipped tarball'
+    echo '   tar -xvzf files.tar.gz'
+
+    echo '4. extract to specific directory'
+    echo '   tar -xvzf files.tar.gz -C /path/to/directory'
+
+    echo '5. list files in archive'
+    echo '   tar -tzf files.tar.gz'
+}
+
+# for bzip2 compression, replace -z with -j. for xz, replace -z with -J
 # alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 # alias yta-best="yt-dlp --extract-audio --audio-format best "
 # alias yta-flac="yt-dlp --extract-audio --audio-format flac "
@@ -77,6 +100,15 @@ alias obs='flatpak run com.obsproject.Studio &'
 alias telegram='~/Downloads/Telegram/Telegram &'
 alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 
+# arduio
+alias arduino='~/Arduino/arduino-ide_nightly-20221128_Linux_64bit.AppImage &'
+alias arduinop='sudo chmod a+rw /dev/ttyUSB*' # /dev/ttyUSB0
+arduinoh(){
+    echo "Options:"
+    echo "arduino  -  run arduino AppImage"
+    echo "arduinop -  add permisions to ttyUSB"
+}
+
 alias server='python3 -m http.server'
 
 # files
@@ -95,7 +127,10 @@ compilec(){
 	# g++ "$1.cc" -o "$1"; "./$1"
 }
 
-alias myg++='g++ -I$HOME/include -L$HOME/lib'
+# myg++(){
+#     "g++ -I$HOME/include -L$HOME/lib $1.cpp"; "./a.out"
+# }
+alias myg++='g++ -I$HOME/include -L$HOME/Lib'
 
 # assembler
 assembler32(){
@@ -109,6 +144,10 @@ assembler64(){
 	nasm -f elf64 "$1.asm" -o "./shitFiles/$1.o"
 	ld "./shitFiles/$1.o" -o "./shitFiles/$1"
 	"./shitFiles/$1"
+}
+
+pkill(){
+    kill -9 $(lsof -t -i:"$1")
 }
 
 # git

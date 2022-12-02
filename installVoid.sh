@@ -2,7 +2,7 @@
 # Install script for void linux
 
 systemInfo(){
-	sudo xbps-install neofetch
+	sudo xbps-install neofetch, unzip
 
 	wget https://github.com/dylanaraps/pfetch/archive/master.zip
 	unzip master.zip

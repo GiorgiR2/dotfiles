@@ -38,18 +38,23 @@ alias em="emacs &"
 alias emc="emacs -nw &"
 
 # youtube-dl download
+alias youtube-dl="~/.dotfiles/yt-dl/yt-dlp_linux"
 alias yt='youtube-dl'
 alias yta='youtube-dl -x --audio-format mp3' # Downloads audio
 alias ytf='youtube-dl -F' # Print resolutions' data
 alias ytd='youtube-dl -f' # Download specific resolition; example: ytd 22
 alias ytap='youtube-dl --extract-audio --audio-format mp3 -o' # Download full playlist in mp3
+alias ytfp='youtube-dl -i -f mp4 --yes-playlist '
+alias ytfpb="youtube-dl -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'"
 yth(){
 	echo "Options:"
-	echo "  yt   link        # download"
-	echo "  yta  link        # download audio"
-	echo "  ytf  link        # print resolutions' data"
-	echo "  ytd  link        # download specific resolition; example: ytd 22"
-	echo "  ytap link        # download full playlist in mp3"
+	echo "  yt    link        # download"
+	echo "  yta   link        # download audio"
+	echo "  ytf   link        # print resolutions' data"
+	echo "  ytd   link        # download specific resolition; example: ytd 22"
+	echo "  ytap  link        # download full playlist in mp3"
+    echo "  ytfp  link        # download full playlist in mp4 (low quality video)"
+    echo "  ytfpb link        # download full playlist in mp4 (best quality audio/video)"
 }
 
 tarh(){
@@ -92,7 +97,7 @@ alias light='xrandr --output eDP-1 --brightness'
 alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 alias up='sudo apt update && sudo apt upgrade'
 
-alias PS='PS1="> "'
+alias PS='PS1="$ "'
 
 # apps
 alias qtox='flatpak run io.github.qtox.qTox &'
@@ -100,18 +105,20 @@ alias obs='flatpak run com.obsproject.Studio &'
 alias telegram='~/Downloads/Telegram/Telegram &'
 alias soulseek='~/Public/SoulseekQt-2018-1-30-64bit.AppImage &'
 
-# arduio
+# arduino
 alias arduino='~/Arduino/arduino-ide_nightly-20221128_Linux_64bit.AppImage &'
 alias arduinop='sudo chmod a+rw /dev/ttyUSB*' # /dev/ttyUSB0
+alias arduinoc='sudo chmod a+rw'
 arduinoh(){
     echo "Options:"
     echo "arduino  -  run arduino AppImage"
-    echo "arduinop -  add permisions to ttyUSB"
+    echo "arduinop -  add permisions to ttyUSB (/dev/ttyUSB*)"
+    echo "arduinop -  add permisions to custom port"
 }
 
-alias server='python3 -m http.server'
+alias python_server='python3 -m http.server'
 
-# files
+# open files
 alias uni="nv ~/20-03.txt"
 alias exams="nv ~/exams.txt"
 
@@ -132,28 +139,67 @@ compilec(){
 # }
 alias myg++='g++ -I$HOME/include -L$HOME/Lib'
 
-# assembler
 assembler32(){
 	# x86
-	nasm -f elf32 "$1.asm" -o "./shitFiles/$1.o"
-	ld -m elf_i386 "./shitFiles/$1.o" -o "./shitFiles/$1"
-	"./shitFiles/$1"
+	nasm -f elf32 "$1.asm" -o "./dis/$1.o"
+	ld -m elf_i386 "./dis/$1.o" -o "./dis/$1"
+	"./dis/$1"
 }
 
 assembler64(){
-	nasm -f elf64 "$1.asm" -o "./shitFiles/$1.o"
-	ld "./shitFiles/$1.o" -o "./shitFiles/$1"
-	"./shitFiles/$1"
+	nasm -f elf64 "$1.asm" -o "./dis/$1.o"
+	ld "./dis/$1.o" -o "./dis/$1"
+	"./dis/$1"
 }
+
+avrcompiler(){
+    avr-gcc -mmcu=atmega8 "$1".c -o "$1".elf;
+    avr-objcopy -j .text -O ihex "$1".elf "$1".hex;
+}
+
+tscc(){
+    tsc $1.ts; mv $1.js ./dis/$1.js; node ./dis/$1.js;
+}
+
+compileh(){
+    echo "1. compilep n        - g++ n.cpp -o n; ./n        # compile cpp and run";
+    echo "2. compilec n        - gcc n.c -o n; ./n          # compile c and run";
+    echo "3. myg++             - g++ -I~/include -L~/Lib    # compile cpp with libs"
+    echo "4. assembler32 n     - .                          # compile 32bit asm and run"
+    echo "5. assembler64 n     - .                          # compile 32bit asm and run"
+    echo "6. avrcompiler n     - .                          # generate hex file"
+    echo "7. tscc n            - .                          # compile ts into ./dis/js and run"
+}
+
+###########################################################
 
 pkill(){
     kill -9 $(lsof -t -i:"$1")
 }
 
+ffind(){
+    find / -type f -name "$1"
+}
+
 # git
 alias gitlog="git log --graph --oneline --decorate"
+gith(){
+    echo "gitlog - git log --graph --oneline --decorate          # log all commits"
+}
 
 # connect to hdmi (projector)
 alias hdmion="xrandr --output HDMI-1 --mode 1920x1080 --rate 60"
 alias hdmioff="xrandr --output HDMI-1 --off --output HDMI-2 --auto"
 
+alias mycomet="/home/giorgir/mycomet/.run /home/giorgir/mycomet"
+# alias +code="~/urbit /home/giorgir/mycomet"
+
+scompile(){
+    sass --watch "$1.sass":"$1.css"
+}
+
+# alias server="cd ~/Desktop/tracking_system_v2/server_side && python3 main.py"
+# alias client="cd ~/Desktop/tracking_system_v2/client_side_py && python3 main.py"
+
+# initialize truffle project with basic metacoin setup
+alias tinit = "truffle unbox metacoin ."

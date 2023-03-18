@@ -14,6 +14,7 @@
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 #external-url-viewer "urlview"
 browser "setsid -f brave-browser --new-tab %u > /dev/null 2>&1"
+reload-threads 5 # parallel
 show-keymap-hint no
 
 bind-key j down
@@ -97,9 +98,9 @@ highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
 
 # Podboat items
-download-path "~/Downloads/%h/%n"
+download-path "~/Downloads/%n"
 max-downloads 3
-player "mpd" # player "mpd"
+player "mpd"
 
 # "~new name for"        # change name of a rss feed
 # t to see tags
@@ -111,3 +112,16 @@ player "mpd" # player "mpd"
 # p to play ?
 #
 # ,v play yt video, podcast, etc...
+
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     green
+color listfocus_unread   black     green
+color info               default   black
+color article            default   default
+
+# highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default

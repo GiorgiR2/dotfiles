@@ -86,6 +86,18 @@ setupDotFiles(){
 	bash ./setup.sh
 }
 
+installDatabases {
+  echo "Installing databases..."
+  #Mysql
+  #See https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-04
+  apt-get install mysql-server
+  mysql_secure_installation
+
+  #Postgres
+  #See https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-04
+  apt-get install postgresql postgresql-contrib
+}
+
 main(){
 	# echo "Choose distribution (debian): "
 	# read distro

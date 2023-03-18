@@ -1,5 +1,5 @@
 " xset r rate 300 50
-
+"
 " install folder:
 " ~/.local/share/nvim/plugged
 :set encoding=UTF-8
@@ -13,7 +13,7 @@
 :set mouse=a
 :set clipboard+=unnamedplus
 
-set ignorecase " ignore cases (searching, etc)
+set ignorecase " (searching, etc)
 set showcmd
 set cmdheight=1
 set laststatus=2
@@ -37,6 +37,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/neoclide/coc.nvim.git'
 Plug 'https://github.com/neoclide/vim-jsx-improve.git' " Plug 'chemzqm/vim-jsx-improve'
 Plug 'https://github.com/tomasiser/vim-code-dark.git' " Plug 'tomasiser/vim-code-dark'
+
 " Plug 'https://github.com/altercation/vim-colors-solarized.git'
 
 " Typescript support
@@ -44,6 +45,21 @@ Plug 'https://github.com/leafgarland/typescript-vim.git' " Plug 'leafgarland/typ
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'https://github.com/junegunn/vim-plug'
 Plug 'https://github.com/peitalin/vim-jsx-typescript.git'
+
+" hoon support
+"Plug 'https://github.com/urbit/hoon.vim.git'
+Plug 'SirVer/ultisnips'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'urbit/hoon.vim'
+
+Plug 'tomlion/vim-solidity'
+Plug 'lifepillar/vim-solarized8'
+" Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
@@ -69,8 +85,10 @@ set termguicolors
 set background=dark
 " colorscheme iceberg
 " colorscheme jellybeans
-colorscheme codedark
+" colorscheme codedark " old
+colorscheme solarized8
 " colorscheme solarized
+" colorscheme nightfox
 
 " Highlight current line and 80 characters limit
 set cursorline
@@ -112,9 +130,10 @@ let g:coc_global_extensions = [
 	\ 'coc-pairs',
 	\ 'coc-tsserver',
 	\ 'coc-eslint',
-	\ 'coc-prettier',
 	\ 'coc-json',
+	\ 'coc-prettier',
 	\ ]
+
 
 " tsx highlights
 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact
@@ -141,3 +160,18 @@ hi tsxTypes guifg=#666666
 " autocmd
 autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
 autocmd FileType js inoremap ;b <b></b><Space><++><Esc>FbT>i
+
+" hoon
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+let g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert
+
+if executable('hoon-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'hoon-language-server',
+        \ 'cmd': ['hoon-language-server'],
+        \ 'whitelist': ['hoon'],
+        \ })
+endif

@@ -14,7 +14,9 @@ main(){
 		ln -sf ~/.dotfiles/${item} ~/${item}
     done
 
+    ./scripts/dns.sh
     source ~/.zshrc
+
 	echo Done!
 }
 
@@ -26,3 +28,6 @@ case $yn in
       *) echo "Invalid input..." break;;
 esac
 
+sudo nvim /etc/systemd/resolved.conf
+
+sudo vim /etc/resolvconf/resolv.conf.d/head

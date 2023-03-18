@@ -3,3 +3,9 @@
 /.config/mpv/watch_later
 
 .newsboat/url
+.newsboat/cache.db
+.newsboat/history.cmdline
+.newsboat/history.search
+.newsboat/queue
+
+yt-dl/

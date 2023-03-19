@@ -30,6 +30,21 @@ alias s='source ~/.zshrc'
 
 alias swap='cd ~/.local/share/nvim/swap'
 
+alias sx='sxiv'
+sxh(){
+    echo "alias sx'=sxiv'";
+    echo "Shortcuts:";
+    echo "  n - next";
+    echo "  p - previous";
+    echo "  W - fit image to screen";
+    echo "  enter - view all";
+    echo "  ctrl+x+w       - set as wallpaper"
+    echo "Options:";
+    echo "  sx *.png       - open multiple (in one tab)";
+    echo "  sx -t *.png    - same but automatically display thumbnails";
+    echo "  sx -ft *.png   - same but start in fullscreen";
+}
+
 # vim and emacs
 alias v='vim'
 alias nv='nvim'
@@ -202,4 +217,4 @@ scompile(){
 # alias client="cd ~/Desktop/tracking_system_v2/client_side_py && python3 main.py"
 
 # initialize truffle project with basic metacoin setup
-alias tinit = "truffle unbox metacoin ."
+alias tinit="truffle unbox metacoin ."

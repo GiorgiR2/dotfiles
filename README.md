@@ -10,6 +10,7 @@ Software I currently use:
  - Text editor - neovim
  - File manager - ranger
  - Window manager - i3
+ - Image Viewer - sxiv
  - Feed reader - Newsboat (reading news, blogs, watching yt/peertube)
 
 ## Getting started

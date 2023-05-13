@@ -1,9 +1,8 @@
 
-# feh --randomize --bg-fill ~/.dotfiles/wallpapers/1920x1080-px-clouds-hill-Himalayas-landscape-mountain-nature-Nepal-snowy-peak-1103793.jpg
-# feh --randomize --bg-fill ~/.dotfiles/wallpapers/i.webp
-
-feh --randomize --bg-fill ~/.dotfiles/wallpapers/8992.jpg
-# feh --randomize --bg-fill ~/.dotfiles/wallpapers/alive.jpg
+feh --randomize --bg-fill ~/.dotfiles/wallpapers/clouds-hill-Himalayas.jpg
+# feh --randomize --bg-fill ~/.dotfiles/wallpapers/ass.webp
+# feh --randomize --bg-fill ~/.dotfiles/wallpapers/8992.jpg
+# feh --randomize --bg-fill ~/.dotfiles/wallpapers/warner.png
 
 setxkbmap -layout us,ge #,ru
 setxkbmap -option 'grp:alt_shift_toggle'

@@ -23,6 +23,7 @@ alias r='. ranger'
 alias sr='sudo ranger'
 alias vf='vifm .'
 alias thunar='thunar . &'
+alias t="thunar"
 alias audio='alsamixer'
 alias gpu='sudo intel_gpu_top'
 
@@ -30,7 +31,8 @@ alias s='source ~/.zshrc'
 
 alias swap='cd ~/.local/share/nvim/swap'
 
-alias sx='sxiv'
+alias sx='sxiv';
+alias sa='sxiv -ft *&';
 sxh(){
     echo "alias sx'=sxiv'";
     echo "Shortcuts:";
@@ -40,9 +42,10 @@ sxh(){
     echo "  enter - view all";
     echo "  ctrl+x+w       - set as wallpaper"
     echo "Options:";
+    echo "  sxa            - view all in tab";
     echo "  sx *.png       - open multiple (in one tab)";
     echo "  sx -t *.png    - same but automatically display thumbnails";
-    echo "  sx -ft *.png   - same but start in fullscreen";
+    echo "  sa -ft *.png   - same but start in fullscreen";
 }
 
 # vim and emacs
@@ -94,6 +97,16 @@ tarh(){
     echo '   tar -tzf files.tar.gz'
 }
 
+alias hlogs='heroku logs --tail';
+alias hres='heroku ps:restart';
+alias hsh='heroku run bash';
+herokuh(){
+    echo "Aliases:";
+    echo "  alias hlogs='heroku logs --tail'";
+    echo "  alias hres='heroku ps:restart'";
+    echo "  alias hsh='heroku run bash'";
+}
+
 # for bzip2 compression, replace -z with -j. for xz, replace -z with -J
 # alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 # alias yta-best="yt-dlp --extract-audio --audio-format best "
@@ -108,8 +121,12 @@ tarh(){
 # control brightness 0.0 - 1.0
 alias light='xrandr --output eDP-1 --brightness'
 
-# clean unnecessary stuff
-alias ccleaner='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
+# clean unnecessary stuff // update
+ccleaner(){
+    sudo apt autoremove && sudo apt autoclean && sudo apt clean;
+    rm -rf /home/giorgir/.local/share/TelegramDesktop/tdata/user_data/cache/0/*;
+    rm -rf /home/giorgir/.local/share/TelegramDesktop/tdata/user_data/media_cache/0/*;
+}
 alias up='sudo apt update && sudo apt upgrade'
 
 alias PS='PS1="$ "'
@@ -134,7 +151,7 @@ arduinoh(){
 alias python_server='python3 -m http.server'
 
 # open files
-alias uni="nv ~/20-03.txt"
+alias uni="vi ~/20-03.txt"
 alias exams="nv ~/exams.txt"
 
 # compilers
@@ -217,4 +234,6 @@ scompile(){
 # alias client="cd ~/Desktop/tracking_system_v2/client_side_py && python3 main.py"
 
 # initialize truffle project with basic metacoin setup
-alias tinit="truffle unbox metacoin ."
+alias tinit="truffle unbox metacoin .";
+
+alias ya="yarn run build && yarn start";
